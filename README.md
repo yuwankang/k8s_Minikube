@@ -1,21 +1,21 @@
-# 🌐k8s(Minikube)를 이용한 LoadBalancer 와 NodePort 방식의 차이 알아보기
+# 🌐k8s(Minikube)를 이용한 LoadBalancer 와 NodePort 이해 하기
 ![image](https://github.com/user-attachments/assets/29a6521a-7087-4298-aefd-727c4b560f1f)
 
 ## 🔍 프로젝트 목표
 > Kubernetes 클러스터 환경에서 LoadBalancer와 NodePort 서비스 방식의 차이를 비교하고, 이를 통해 애플리케이션 배포 시의 네트워크 접근성을 최적화하는 방법을 이해하는 것입니다.
 
 ## 🛠️ 기술 스택
-- Docker: 애플리케이션 컨테이너화 및 이미지 생성
-- Kubernetes (K8s): 애플리케이션 관리 및 배포 자동화
-- Minikube: 로컬 Kubernetes 클러스터 환경
-- NGINX 및 Spring Boot: 애플리케이션 서버
+- 🐳 Docker: 애플리케이션 컨테이너화 및 이미지 생성
+- ☸️ Kubernetes (K8s): 애플리케이션 관리 및 배포 자동화
+- 🖥️ Minikube: 로컬 Kubernetes 클러스터 환경
+- 🚀 NGINX 및 Spring Boot: 애플리케이션 서버
 
 ## 환경설정 
 > jar 파일을 사용하여 image 빌드 후 사용하기 
 ### 🛠️jar 파일 build
 ![](https://velog.velcdn.com/images/yuwankang/post/559e6847-3e26-4614-bdd6-f2666b1dff0f/image.png)
 
-### Dockerfile
+### 🐳Dockerfile
 ```bash
 # 베이스 이미지로 OpenJDK 17을 사용합니다.
 FROM openjdk:17
@@ -37,7 +37,7 @@ docker run -d --name spring-app-container spring-app-image
 ```
 ![](https://velog.velcdn.com/images/yuwankang/post/5c89e190-a9e6-4291-9955-0861ad58607b/image.png)
 
-## Docker 이미지를 Minikube에서 로드
+## 🐳Docker 이미지를 Minikube에서 로드
 - Minikube의 Docker 환경 설정을 현재 셸 세션에 적용합니다.
 - 이미지 빌드 (이미지 이름은 spring-app-image로 설정)
 ```bash
@@ -45,7 +45,7 @@ eval $(minikube docker-env)
 docker build -t spring-app-image .  
 ```
 ![](https://velog.velcdn.com/images/yuwankang/post/c56f78d7-951a-4b5e-9ca6-c86ff6ec3f7a/image.png)
-### 이미지 확인
+### 🔍이미지 확인
 > Minikube에 SSH로 접속
 
 ```
