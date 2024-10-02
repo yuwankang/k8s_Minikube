@@ -90,29 +90,28 @@ kubectl expose deployment spring-app-image --type=NodePort --port=80
 >동일한 NGINX를 3개로 구성해서 생성 및 배포
 
 ```bash
-kubectl create deployment nginx --image=nginx --replicas=3
+kubectl create deployment spring-app-image --image=spring-app-image --replicas=3
 ```
-![](https://velog.velcdn.com/images/yuwankang/post/928f2a4a-27b9-4533-a641-5f33d18c0bd8/image.png)
-
 > 서비스 확인
 
 ```
 kubectl get services
 ```
-![](https://velog.velcdn.com/images/yuwankang/post/5a98a1a9-bdae-427c-9486-ed5e7373ca81/image.png)
+![image](https://github.com/user-attachments/assets/405d15af-ace2-45b3-aefb-37f8cd22ff98)
+
 
 
 > 🌍NGINX 클러스터 External IP 추가
 
 ```bash
-kubectl expose deployment nginx --type=LoadBalancer --port=80
+ubectl expose deployment spring-app-image --type=LoadBalancer --port=80
 ```
 > Minikube에서 외부 IP 제공받기 위한 터널링
 
 ```
 minikube tunnel
 ```
-![](https://velog.velcdn.com/images/yuwankang/post/7e7bde3e-19ce-475e-80c5-519760bda382/image.png)
+![image](https://github.com/user-attachments/assets/c44e2174-a219-4af4-985b-6e9e8a857dba)
 
 > 🌐EXTERNAL-IP를 확인하기
 
@@ -123,9 +122,9 @@ curl <EXTERNAL-IP>
 ```
 ![](https://velog.velcdn.com/images/yuwankang/post/5433bdbe-9103-4bfd-9da1-efefafcb0857/image.png)
 - 포트 포워딩
-![](https://velog.velcdn.com/images/yuwankang/post/330d18ac-f099-4e31-9d4e-ec71d9efb326/image.png)
-- 웹 접속 확인
-![](https://velog.velcdn.com/images/yuwankang/post/901c29cc-7059-4abb-8b26-06817b71fccd/image.png)
+![image](https://github.com/user-attachments/assets/bd903518-feb2-49dd-bf0d-27c16055d7e8)
+
+
 - DashBoard에서 확인
 ![](https://velog.velcdn.com/images/yuwankang/post/2234e080-6eb9-405b-91bf-8a9fdc3d62b6/image.png)
 
@@ -212,6 +211,7 @@ minikube dashboard
 ![](https://velog.velcdn.com/images/yuwankang/post/d72d5a0c-cf69-4088-bd21-6d4a672a2b65/image.png)
 
 # 결과 및 결론
+![image](https://github.com/user-attachments/assets/272e3216-4891-4b31-855b-d1bdb92fa85a)
 - LoadBalancer 방식: 외부 네트워크에서 접근이 가능하지만, Minikube에서는 터널링이 필요. 클러스터 외부에서 쉽게 접속 가능하다는 장점이 있음.
 - NodePort 방식: 로컬 네트워크에서만 접근 가능하며, 터널링이 필요하지 않음. 로컬 클러스터 환경에서 더 간단하게 설정할 수 있다는 장점이 있음.
 
