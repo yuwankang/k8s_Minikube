@@ -1,4 +1,7 @@
 # 🌐k8s(Minikube)를 이용한 LoadBalancer 와 NodePort 이해 하기
+![image](https://github.com/user-attachments/assets/fa7af23e-5e35-4fa8-af58-6af1ea2f555c)
+
+
 ![image](https://github.com/user-attachments/assets/29a6521a-7087-4298-aefd-727c4b560f1f)
 
 ## 🔍 프로젝트 목표
