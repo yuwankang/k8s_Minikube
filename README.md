@@ -37,6 +37,22 @@ docker run -d --name spring-app-container spring-app-image
 ```
 ![](https://velog.velcdn.com/images/yuwankang/post/5c89e190-a9e6-4291-9955-0861ad58607b/image.png)
 
+## ⚙️ Minkube 클러스터 시작
+```
+minikube start
+```
+#### 🔧 dashboard  활성화
+>  클러스터에 기본적인 리소스 모니터링 활성화
+
+```bash
+minikube addons enable metrics-server
+```
+> dashboard 활성화
+
+```bash
+minikube dashboard
+```
+
 ## 🐳Docker 이미지를 Minikube에서 로드
 - Minikube의 Docker 환경 설정을 현재 셸 세션에 적용합니다.
 - 이미지 빌드 (이미지 이름은 spring-app-image로 설정)
@@ -70,21 +86,6 @@ kubectl expose deployment spring-app-image --type=NodePort --port=80
 ![](https://velog.velcdn.com/images/yuwankang/post/574ba7e0-61b3-4c28-9b1a-a3bf1288a33e/image.png)
 
 # 🚀LoadBalance 방식
-## ⚙️ Minkube 클러스터 시작
-```
-minikube start
-```
-#### 🔧 dashboard  활성화
->  클러스터에 기본적인 리소스 모니터링 활성화
-
-```bash
-minikube addons enable metrics-server
-```
-> dashboard 활성화
-
-```bash
-minikube dashboard
-```
 
 >동일한 NGINX를 3개로 구성해서 생성 및 배포
 
